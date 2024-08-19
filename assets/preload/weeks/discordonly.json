@@ -1,0 +1,59 @@
+{
+	"storyName": "discordo!",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"discord annoyer",
+			"pixelated",
+			[
+				220,
+				180,
+				0
+			]
+		],
+		[
+			"note nova",
+			"pixelated",
+			[
+				220,
+				180,
+				0
+			]
+		],
+		[
+			"shut up",
+			"bspooki",
+			[
+				255,
+				0,
+				0
+			]
+		],
+		[
+			"rudeance",
+			"pixelatedammar",
+			[
+				180,
+				255,
+				0
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Discordo!",
+	"hiddenUntilUnlocked": false
+}
