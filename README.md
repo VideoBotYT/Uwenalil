@@ -8,7 +8,7 @@ Follow a Friday Night Funkin' source code compilation tutorial, after this you w
 
 To install LuaJIT do this: `haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit` on a Command prompt/PowerShell
 
-And you also need: `haxelib git fnf-modcharting-tools https://github.com/EdwhakKB/FNF-Modcharting-Tools`
+And you also need: `haxelib git fnf-modchart.modcharting-tools https://github.com/EdwhakKB/FNF-modchart.modcharting-Tools`
 
 ...Or if you don't want your mod to be able to run .lua scripts, delete the "LUA_ALLOWED" line on Project.xml
 

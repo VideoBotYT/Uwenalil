@@ -630,6 +630,11 @@ class TitleState extends MusicBeatState
 			else
 				gfDance.animation.play('danceLeft');
 		}
+		if(skippedIntro) {
+			FlxTween.tween(FlxG.camera, {zoom:1.05}, 0.3, {ease: FlxEase.expoInOut, type: BACKWARD});
+		}else {
+			FlxTween.tween(FlxG.camera, {zoom:1});
+		}
 
 		if(!closedState) {
 			sickBeats++;
@@ -641,16 +646,16 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(4, 0, 0.2);
 				case 2:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
+					createCoolText(['Greenman Engine by'], 15);
 					#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
 				// credTextShit.visible = true;
 				case 4:
 					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
+					addMoreText('Uwenalil', 15);
+					addMoreText('VideoBot', 15);
+					addMoreText('Edwhak_Killbot?', 15);
 					#else
 					addMoreText('present');
 					#end
@@ -686,18 +691,13 @@ class TitleState extends MusicBeatState
 				// credTextShit.text += '\nlmao';
 				case 13:
 					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "Friday";
-				// credTextShit.screenCenter();
+					addMoreText('Friday Night Funkin');
 				case 14:
-					addMoreText('Friday');
-				// credTextShit.visible = true;
+					addMoreText('Uwenalil');
 				case 15:
-					addMoreText('Night');
-				// credTextShit.text += '\nNight';
+					addMoreText('Collections');
 				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
+					addMoreText('V3');
 				case 17:
 					skipIntro();
 			}

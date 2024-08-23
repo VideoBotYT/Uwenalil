@@ -21,7 +21,7 @@ typedef EventNote = {
 
 class Note extends FlxSkewedSprite
 {
-	public var mesh:modcharting.SustainStrip = null;
+	public var mesh:modchart.modcharting.SustainStrip = null;
 	public var z:Float = 0;
 	
 	public var extraData:Map<String,Dynamic> = [];
