@@ -163,7 +163,7 @@ class MainMenuState extends MusicBeatState
 				menuItem.y = 60 + (i * 160);
 		}
 
-		// FlxG.camera.follow(camFollowPos, null, 1);
+		//FlxG.camera.follow(camFollowPos, null, 1);
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, "Uwenalil Collection v" + pixelVersion, 12);
 		versionShit.scrollFactor.set();
@@ -314,13 +314,6 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 		});
-	}
-
-	override function beatHit()
-	{
-		super.beatHit();
-
-		FlxTween.tween(FlxG.camera, {zoom:1.05}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});
 	}
 
 	function changeItem(huh:Int = 0)
