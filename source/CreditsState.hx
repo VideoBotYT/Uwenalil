@@ -85,6 +85,7 @@ class CreditsState extends MusicBeatState
 			['Uwenalil', 'uwenalil', 'Creator of the mod and stuff', 'https://www.youtube.com/channel/UCCrpusmIel39v0gUm3s3O2g', '00FF00'],
 			['VideoBot', 'vb', 'Modcharter and Source code', 'https://www.youtube.com/@videobot2009', '14FFFF'],
 			['Edwhak', 'killbot', 'Creator of the modchart tool used in this mod', 'https://www.youtube.com/@EDWHAK', 'FF0000'],
+			['TechDev', 'tech', 'Made the menu bounce', '', 'FF00FF'],
 			[],
 			['Special Thanks'],
 			['You', 'You', 'Thank you for playing', '', '00FF00'],

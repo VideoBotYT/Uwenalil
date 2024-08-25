@@ -656,6 +656,7 @@ class TitleState extends MusicBeatState
 					addMoreText('Uwenalil', 15);
 					addMoreText('VideoBot', 15);
 					addMoreText('Edwhak_Killbot?', 15);
+					addMoreText('TechDev', 15);
 					#else
 					addMoreText('present');
 					#end

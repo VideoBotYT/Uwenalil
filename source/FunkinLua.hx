@@ -213,6 +213,8 @@ class FunkinLua {
 		set('scriptName', scriptName);
 		set('currentModDirectory', Paths.currentModDirectory);
 
+		set('experimental', ClientPrefs.gameplaySettings.get('experimental'));
+
 		#if windows
 		set('buildTarget', 'windows');
 		#elseif linux

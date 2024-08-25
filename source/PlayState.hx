@@ -3257,6 +3257,7 @@ class PlayState extends MusicBeatState
 		{
 			openChartEditor();
 		}
+
 		if (FlxG.keys.anyJustPressed(debugKeysModChart) && !endingSong && !inCutscene)
 		{
 			openModChartEditor();
@@ -5011,10 +5012,10 @@ class PlayState extends MusicBeatState
 
 			/*boyfriend.stunned = true;
 	
-										// get stunned for 1/60 of a second, makes you able to
-										new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
-										{
-											boyfriend.stunned = false;
+																			// get stunned for 1/60 of a second, makes you able to
+																			new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
+																			{
+																				boyfriend.stunned = false;
 			});*/
 
 			if (boyfriend.hasMissAnimations)
