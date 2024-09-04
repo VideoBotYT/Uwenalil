@@ -10,23 +10,21 @@ class DiscordMenu extends MusicBeatState
 {
 	var bg:FlxSprite;
 	var menuItems:FlxTypedGroup<FlxSprite>;
-	var shit:Array<String> = ['Discordo!', 'nothing', 'fanta'];
-
-	var tex = Paths.getSparrowAtlas("discordMenu/weeks/items");
+	var shit:Array<String> = ['discordo', 'nothing', 'fanta'];
 
 	var curSelected:Int = 0;
+	var curDifficulty:Int = 0;
 
 	var diffi:Int = 0;
 	var difNames:Array<String> = ['Normal'];
 
-	var songs:Array<Array<String>> = [
-		['discord-annoyer', 'note nova', 'shut up', 'rudeance'],
-		['nothing'],
-		['fantamadeofglass']
-	];
+	var songs:Array<Array<String>> = [['discord-annoyer', 'note nova', 'shut up', 'rudeance'], ['nothing'], ['fantamadeofglass']];
 
 	override function create()
 	{
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();	
+
 		bg = new FlxSprite(0, 0).loadGraphic(Paths.image("discordMenu/menuBG"));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
@@ -36,34 +34,24 @@ class DiscordMenu extends MusicBeatState
 
 		for (i in 0...shit.length)
 		{
-			var offset:Float = 108 - (Math.max(shit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, 0);
-			menuItem.frames = tex;
-			menuItem.animation.addByPrefix('idle', shit[i] + " idle", 24);
-			menuItem.animation.addByPrefix('selected', shit[i] + " sel", 24);
-			menuItem.animation.play('idle');
+			var menuItem = new FlxSprite(0, 140 * i).loadGraphic(Paths.image('discordMenu/' + shit[i]));
 			menuItem.ID = i;
+			menuItem.screenCenter(X);
 			menuItem.updateHitbox();
-
-			switch (i)
-			{
-				case 0:
-					menuItem.setPosition(130, (i * 140) + offset);
-					menuItem.screenCenter(X);
-				case 1:
-					menuItem.setPosition(130, (i * 140) + offset);
-					menuItem.screenCenter(X);
-				case 2:
-					menuItem.setPosition(130, (i * 140) + offset);
-					menuItem.screenCenter(X);
-			}
-
 			menuItems.add(menuItem);
 			menuItem.scrollFactor.set(0, 0.25);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-
-			changeItem();
 		}
+
+		menuItems.forEach(function(spr:FlxSprite) {
+			if (spr.ID != curSelected) {
+					spr.scale.set(1, 1);
+			} else {
+					spr.scale.set(1.15, 1.15);
+			}
+		});
+
+		changeItem();
 
 		super.create();
 	}
@@ -71,6 +59,14 @@ class DiscordMenu extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		FlxG.sound.music.volume = 0.2;
+
+		menuItems.forEach(function(spr:FlxSprite) {
+			if (spr.ID != curSelected) {
+					spr.scale.set(1, 1);
+			} else {
+					spr.scale.set(1.15, 1.15);
+			}
+		});
 
 		if (controls.BACK)
 		{
@@ -100,23 +96,6 @@ class DiscordMenu extends MusicBeatState
 			curSelected = 0;
 		if (curSelected < 0)
 			curSelected = menuItems.length - 1;
-
-		menuItems.forEach(function(spr:FlxSprite)
-		{
-			spr.animation.play('idle');
-			spr.updateHitbox();
-
-			if (spr.ID == curSelected)
-			{
-				spr.animation.play('selected');
-				var add:Float = 0;
-				if (menuItems.length > 4)
-				{
-					add = menuItems.length * 8;
-				}
-				spr.centerOffsets();
-			}
-		});
 	}
 
 	function doShit()
@@ -126,14 +105,21 @@ class DiscordMenu extends MusicBeatState
 
 		var diffic = "";
 
-		PlayState.storyDifficulty = diffi;
+		switch(curDifficulty)
+		{
+			case 0:
+				diffic = 'normal';
+		}
+
+		@:privateAccess
+		WeekData.sexList = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
+		PlayState.storyDifficulty = curDifficulty;
+		PlayState.isSM = true;
 		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 		PlayState.storyWeek = curSelected;
-
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			LoadingState.loadAndSwitchState(new PlayState(), true);
-			FreeplayState.destroyFreeplayVocals();
 		});
 	}
 }

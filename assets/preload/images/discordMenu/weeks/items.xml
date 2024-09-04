@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="items.png">
-<SubTexture name="discord idle0000" x="0" y="89" width="90" height="87" frameX="-134" frameY="-1" frameWidth="359" frameHeight="89" />
-<SubTexture name="discord sel0000" x="0" y="0" width="114" height="89" frameX="-118" frameY="0" frameWidth="359" frameHeight="89" />
-<SubTexture name="nothing idle0000" x="198" y="77" width="352" height="64" frameX="-4" frameY="-13" frameWidth="359" frameHeight="89" />
-<SubTexture name="nothing sel0000" x="198" y="0" width="359" height="77" frameX="0" frameY="-3" frameWidth="359" frameHeight="89" />
-<SubTexture name="fanta idle0000" x="114" y="0" width="34" height="89" frameX="-162" frameY="0" frameWidth="359" frameHeight="89" />
-<SubTexture name="fanta sel0000" x="148" y="0" width="50" height="89" frameX="-147" frameY="0" frameWidth="359" frameHeight="89" />
-</TextureAtlas>
