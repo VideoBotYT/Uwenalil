@@ -131,6 +131,7 @@ class FunkinLua {
 		set('isStoryMode', PlayState.isStoryMode);
 		set('difficulty', PlayState.storyDifficulty);
 		set('modchart', ClientPrefs.gameplaySettings.get('modchart'));
+		set('devMode', ClientPrefs.gameplaySettings.get('dev'));
 
 		var difficultyName:String = CoolUtil.difficulties[PlayState.storyDifficulty];
 		set('difficultyName', difficultyName);

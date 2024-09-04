@@ -685,10 +685,10 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
 				case 10:
-					createCoolText([curWacky[0]]);
+					addMoreText('Fan Made version off');
 				// credTextShit.visible = true;
 				case 12:
-					addMoreText(curWacky[1]);
+					addMoreText("An Ammar's Creativity");
 				// credTextShit.text += '\nlmao';
 				case 13:
 					deleteCoolText();

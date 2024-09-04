@@ -6,6 +6,7 @@ haxelib set lime 8.0.1
 haxelib set openfl 9.3.2
 haxelib set SScript 7.7.0
 haxelib set tjson 1.4.0
+haxelib set hscpp 4.2.1
 
 haxelib list flixel
 haxelib list flixel-addons
@@ -15,5 +16,6 @@ haxelib list lime
 haxelib list openfl
 haxelib list SScript
 haxelib list tjson
+haxelib list hscpp
 
 pause

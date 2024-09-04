@@ -298,6 +298,8 @@ class ModchartEditorState extends #if SCEModchartingTools states.MusicBeatState 
 		EaseYModifier,
 		EaseZModifier,
 		ShakyNotesModifier,
+		Joink,
+		JoinkNotes,
 		ArrowPath
 	];
 	public static var easeList:Array<String> = [
@@ -306,7 +308,7 @@ class ModchartEditorState extends #if SCEModchartingTools states.MusicBeatState 
 		"quartOut", "quintIn", "quintInOut", "quintOut", "sineIn", "sineInOut", "sineOut", "smoothStepIn", "smoothStepInOut", "smoothStepOut",
 		"smootherStepIn", "smootherStepInOut", "smootherStepOut",
 	];
-
+	
 	// used for indexing
 	public static var MOD_NAME = ModchartFile.MOD_NAME; // the modifier name
 	public static var MOD_CLASS = ModchartFile.MOD_CLASS; // the class/custom mod it uses

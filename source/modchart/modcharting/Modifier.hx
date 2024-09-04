@@ -20,6 +20,7 @@ import Note;
 import lime.math.Vector4;
 import haxe.ds.List;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import Paths;
 
 enum ModifierType
 {
@@ -357,6 +358,40 @@ class SwapPlayfieldModifier extends Modifier
 	override function strumMath(noteData:NotePositionData, lane:Int, pf:Int)
 	{
 		noteMath(noteData, lane, 0, pf);
+	}
+}
+
+class Joink extends Modifier
+{
+	override function strumMath(noteData:NotePositionData, lane:Int, pf:Int)
+	{
+		var swap = 640;
+
+		if (lane >= 0 && lane <= 3)
+		{
+			noteData.x += swap * currentValue;
+		}
+		if (lane >= 4 && lane <= 7)
+		{
+			noteData.x -= swap * currentValue;
+		}
+	}
+}
+
+class JoinkNotes extends Modifier
+{
+	override function noteMath(noteData:NotePositionData, lane:Int, curPos:Float, pf:Int)
+	{
+		var swap = 640;
+
+		if (lane >= 0 && lane <= 3)
+		{
+			noteData.x += swap * currentValue;
+		}
+		if (lane >= 4 && lane <= 7)
+		{
+			noteData.x -= swap * currentValue;
+		}
 	}
 }
 
@@ -2213,7 +2248,7 @@ class ArrowPath extends Modifier
 	public function loadPath()
 	{
 		var file = null;
-		file = CoolUtil.coolTextFile(Paths #if PSYCH .modFolders #else .txt #end
+		file = CoolUtil.coolTextFile(Paths#if PSYCH .modFolders #else .txt#end
 			(#if PSYCH "data/" + #end PlayState.SONG.song.toLowerCase() + "/customMods/path" #if PSYCH + ".txt" #end));
 		@:privateAccess
 		var file2 = null;

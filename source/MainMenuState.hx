@@ -61,6 +61,9 @@ class MainMenuState extends MusicBeatState
 		#end
 		WeekData.loadTheFirstEnabledMod();
 
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);
@@ -128,8 +131,6 @@ class MainMenuState extends MusicBeatState
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
-			if (optionShit.length < 6)
-				scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			// menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
@@ -163,7 +164,7 @@ class MainMenuState extends MusicBeatState
 				menuItem.y = 60 + (i * 160);
 		}
 
-		//FlxG.camera.follow(camFollowPos, null, 1);
+		// FlxG.camera.follow(camFollowPos, null, 1);
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 84, 0, "Uwenalil Collection v" + pixelVersion, 12);
 		versionShit.scrollFactor.set();
@@ -299,13 +300,16 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 
-			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
 			}
-			#end
+			else if (FlxG.keys.pressed.ONE)
+			{
+				selectedSomethin = true;
+				MusicBeatState.switchState(new DiscordMenu());
+			}
 		}
 
 		super.update(elapsed);
