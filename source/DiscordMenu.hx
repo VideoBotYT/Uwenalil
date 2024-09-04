@@ -114,7 +114,6 @@ class DiscordMenu extends MusicBeatState
 		@:privateAccess
 		WeekData.sexList = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
 		PlayState.storyDifficulty = curDifficulty;
-		PlayState.isSM = true;
 		PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 		PlayState.storyWeek = curSelected;
 		new FlxTimer().start(1, function(tmr:FlxTimer)
