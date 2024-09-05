@@ -46,6 +46,7 @@ class WeekData {
 	public var hideStoryMode:Bool;
 	public var hideFreeplay:Bool;
 	public var difficulties:String;
+	public static var sexList:Array<String>
 
 	public var fileName:String;
 
@@ -132,7 +133,7 @@ class WeekData {
 		var originalLength:Int = directories.length;
 		#end
 
-		public static var sexList:Array<String> = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
+		sexList = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
 		for (i in 0...sexList.length) {
 			for (j in 0...directories.length) {
 				var fileToCheck:String = directories[j] + 'weeks/' + sexList[i] + '.json';
