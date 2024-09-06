@@ -47,7 +47,7 @@ class DiscordMenu extends MusicBeatState
 			if (spr.ID != curSelected) {
 					spr.scale.set(1, 1);
 			} else {
-					spr.scale.set(1.15, 1.15);
+					spr.scale.set(1.25, 1.25);
 			}
 		});
 
@@ -64,7 +64,7 @@ class DiscordMenu extends MusicBeatState
 			if (spr.ID != curSelected) {
 					spr.scale.set(1, 1);
 			} else {
-					spr.scale.set(1.15, 1.15);
+					spr.scale.set(1.25, 1.25);
 			}
 		});
 
