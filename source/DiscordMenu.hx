@@ -34,7 +34,7 @@ class DiscordMenu extends MusicBeatState
 
 		for (i in 0...shit.length)
 		{
-			var menuItem = new FlxSprite(0, 140 * i).loadGraphic(Paths.image('discordMenu/weeks/' + shit[i]));
+			var menuItem = new FlxSprite(0, 150 + (140 * i)).loadGraphic(Paths.image('discordMenu/weeks/' + shit[i]));
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItem.updateHitbox();
