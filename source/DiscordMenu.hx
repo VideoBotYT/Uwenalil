@@ -34,7 +34,7 @@ class DiscordMenu extends MusicBeatState
 
 		for (i in 0...shit.length)
 		{
-			var menuItem = new FlxSprite(0, 140 * i).loadGraphic(Paths.image('discordMenu/' + shit[i]));
+			var menuItem = new FlxSprite(0, 140 * i).loadGraphic(Paths.image('discordMenu/weeks/' + shit[i]));
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItem.updateHitbox();
@@ -108,7 +108,7 @@ class DiscordMenu extends MusicBeatState
 		switch(curDifficulty)
 		{
 			case 0:
-				diffic = 'normal';
+				diffic = '';
 		}
 
 		@:privateAccess
